@@ -1,7 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-
-group='com.github.liliangEric'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
@@ -14,6 +11,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+        buildConfigField("String", "http", "\"https://www.nteport.com/dzka_wmsapi/api/\"")
     }
 
     buildTypes {
@@ -30,6 +28,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     //rxjava and retrofit and okhttp3
     api 'io.reactivex.rxjava2:rxjava:2.1.8'
     api 'io.reactivex.rxjava2:rxandroid:2.0.1'
